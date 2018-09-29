@@ -1,0 +1,1115 @@
+###############################################################################
+#
+# IAR ELF Linker V2.20.1.176 for STM8                     07/May/2018  00:05:21
+# Copyright 2010-2015 IAR Systems AB.
+#
+#    Output file  =  
+#        D:\Radio\MK\STM\STM8L\COPY_Avto_Comp\Release\Exe\board_PC.out
+#    Map file     =  
+#        D:\Radio\MK\STM\STM8L\COPY_Avto_Comp\Release\List\board_PC.map
+#    Command line =  
+#        D:\Radio\MK\STM\STM8L\COPY_Avto_Comp\Release\Obj\alarm.o
+#        D:\Radio\MK\STM\STM8L\COPY_Avto_Comp\Release\Obj\circle.o
+#        D:\Radio\MK\STM\STM8L\COPY_Avto_Comp\Release\Obj\clock.o
+#        D:\Radio\MK\STM\STM8L\COPY_Avto_Comp\Release\Obj\counter.o
+#        D:\Radio\MK\STM\STM8L\COPY_Avto_Comp\Release\Obj\flash.o
+#        D:\Radio\MK\STM\STM8L\COPY_Avto_Comp\Release\Obj\fm.o
+#        D:\Radio\MK\STM\STM8L\COPY_Avto_Comp\Release\Obj\gidro_trans.o
+#        D:\Radio\MK\STM\STM8L\COPY_Avto_Comp\Release\Obj\lcd.o
+#        D:\Radio\MK\STM\STM8L\COPY_Avto_Comp\Release\Obj\main.o
+#        D:\Radio\MK\STM\STM8L\COPY_Avto_Comp\Release\Obj\menu.o
+#        D:\Radio\MK\STM\STM8L\COPY_Avto_Comp\Release\Obj\set_pin.o
+#        D:\Radio\MK\STM\STM8L\COPY_Avto_Comp\Release\Obj\speed.o
+#        D:\Radio\MK\STM\STM8L\COPY_Avto_Comp\Release\Obj\valcoder.o --redirect
+#        _Printf=_PrintfFullNoMb --redirect _Scanf=_ScanfFullNoMb -o
+#        D:\Radio\MK\STM\STM8L\COPY_Avto_Comp\Release\Exe\board_PC.out --map
+#        D:\Radio\MK\STM\STM8L\COPY_Avto_Comp\Release\List\board_PC.map
+#        --config "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        7.3\stm8\config\lnkstm8.icf" --config_def _CSTACK_SIZE=0x100
+#        --config_def _HEAP_SIZE=0x100 --entry __iar_program_start
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+__SystemLibrary            = DLib
+__code_model               = small
+__core                     = stm8
+__data_model               = medium
+__dlib_file_descriptor     = 0
+__dlib_full_locale_support = 0
+__rt_version               = 4
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A1":  place at start of [0x000000-0x0000ff] { rw section .vregs };
+"A2":  place at end of [0x000000-0x0017ff] { block CSTACK };
+"P2":  place in [from 0x000000 to 0x0017ff] {
+          block HEAP, rw section .far.bss, rw section .far.data,
+          rw section .far.noinit, rw section .far_func.textrw,
+          rw section .huge.bss, rw section .huge.data, rw section .huge.noinit,
+          rw section .huge_func.textrw, rw section .iar.dynexit,
+          rw section .near.bss, rw section .near.data, rw section .near.noinit,
+          rw section .near_func.textrw };
+"A3":  place at start of [0x008000-0x00ffff] { block INTVEC };
+"P3":  place in [from 0x008000 to 0x00ffff] {
+          ro section .far.data_init, ro section .far_func.textrw_init,
+          ro section .huge.data_init, ro section .huge_func.textrw_init,
+          ro section .iar.init_table, ro section .init_array,
+          ro section .near.data_init, ro section .near.rodata,
+          ro section .near_func.text, ro section .near_func.textrw_init,
+          ro section .tiny.data_init, ro section .tiny.rodata_init };
+
+  Section            Kind      Address    Size  Object
+  -------            ----      -------    ----  ------
+"A1":                                     0x10
+  .vregs             uninit   0x000000    0x10  vregs.o [4]
+                            - 0x000010    0x10
+
+"P2", part 1 of 2:                         0xe
+  P2-1                        0x000010     0xe  <Init block>
+    .near.data       inited   0x000010     0x2  fm.o [1]
+    .near.data       inited   0x000012     0x2  fm.o [1]
+    .near.data       inited   0x000014     0x1  fm.o [1]
+    .near.data       inited   0x000015     0x1  fm.o [1]
+    .near.data       inited   0x000016     0x1  fm.o [1]
+    .near.data       inited   0x000017     0x1  gidro_trans.o [1]
+    .near.data       inited   0x000018     0x1  gidro_trans.o [1]
+    .near.data       inited   0x000019     0x1  lcd.o [1]
+    .near.data       inited   0x00001a     0x1  menu.o [1]
+    .near.data       inited   0x00001b     0x1  menu.o [1]
+    .near.data       inited   0x00001c     0x1  speed.o [1]
+    .near.data       inited   0x00001d     0x1  speed.o [1]
+                            - 0x00001e     0xe
+
+"P2", part 2 of 2:                       0x135
+  .near.bss          zero     0x00001e    0x30  fm.o [1]
+  .near.bss          zero     0x00004e    0x10  lcd.o [1]
+  .near.bss          zero     0x00005e    0x10  lcd.o [1]
+  .near.bss          zero     0x00006e     0x4  circle.o [1]
+  .near.bss          zero     0x000072     0x4  counter.o [1]
+  .near.bss          zero     0x000076     0x4  flash.o [1]
+  .near.bss          zero     0x00007a     0x4  flash.o [1]
+  .near.bss          zero     0x00007e     0x4  fm.o [1]
+  .near.bss          zero     0x000082     0x4  menu.o [1]
+  .near.bss          zero     0x000086     0x4  menu.o [1]
+  .near.bss          zero     0x00008a     0x2  circle.o [1]
+  .near.bss          zero     0x00008c     0x2  circle.o [1]
+  .near.bss          zero     0x00008e     0x2  clock.o [1]
+  .near.bss          zero     0x000090     0x2  clock.o [1]
+  .near.bss          zero     0x000092     0x2  clock.o [1]
+  .near.bss          zero     0x000094     0x2  clock.o [1]
+  .near.bss          zero     0x000096     0x2  clock.o [1]
+  .near.bss          zero     0x000098     0x2  clock.o [1]
+  .near.bss          zero     0x00009a     0x2  clock.o [1]
+  .near.bss          zero     0x00009c     0x2  clock.o [1]
+  .near.bss          zero     0x00009e     0x2  counter.o [1]
+  .near.bss          zero     0x0000a0     0x2  counter.o [1]
+  .near.bss          zero     0x0000a2     0x2  counter.o [1]
+  .near.bss          zero     0x0000a4     0x2  counter.o [1]
+  .near.bss          zero     0x0000a6     0x2  counter.o [1]
+  .near.bss          zero     0x0000a8     0x2  counter.o [1]
+  .near.bss          zero     0x0000aa     0x2  counter.o [1]
+  .near.bss          zero     0x0000ac     0x2  counter.o [1]
+  .near.bss          zero     0x0000ae     0x2  counter.o [1]
+  .near.bss          zero     0x0000b0     0x2  counter.o [1]
+  .near.bss          zero     0x0000b2     0x2  counter.o [1]
+  .near.bss          zero     0x0000b4     0x2  counter.o [1]
+  .near.bss          zero     0x0000b6     0x2  counter.o [1]
+  .near.bss          zero     0x0000b8     0x2  flash.o [1]
+  .near.bss          zero     0x0000ba     0x2  flash.o [1]
+  .near.bss          zero     0x0000bc     0x2  flash.o [1]
+  .near.bss          zero     0x0000be     0x2  flash.o [1]
+  .near.bss          zero     0x0000c0     0x2  flash.o [1]
+  .near.bss          zero     0x0000c2     0x2  flash.o [1]
+  .near.bss          zero     0x0000c4     0x2  flash.o [1]
+  .near.bss          zero     0x0000c6     0x2  flash.o [1]
+  .near.bss          zero     0x0000c8     0x2  flash.o [1]
+  .near.bss          zero     0x0000ca     0x2  flash.o [1]
+  .near.bss          zero     0x0000cc     0x2  flash.o [1]
+  .near.bss          zero     0x0000ce     0x2  flash.o [1]
+  .near.bss          zero     0x0000d0     0x2  flash.o [1]
+  .near.bss          zero     0x0000d2     0x2  flash.o [1]
+  .near.bss          zero     0x0000d4     0x2  flash.o [1]
+  .near.bss          zero     0x0000d6     0x2  flash.o [1]
+  .near.bss          zero     0x0000d8     0x2  flash.o [1]
+  .near.bss          zero     0x0000da     0x2  flash.o [1]
+  .near.bss          zero     0x0000dc     0x2  flash.o [1]
+  .near.bss          zero     0x0000de     0x2  flash.o [1]
+  .near.bss          zero     0x0000e0     0x2  flash.o [1]
+  .near.bss          zero     0x0000e2     0x2  flash.o [1]
+  .near.bss          zero     0x0000e4     0x2  flash.o [1]
+  .near.bss          zero     0x0000e6     0x2  flash.o [1]
+  .near.bss          zero     0x0000e8     0x2  fm.o [1]
+  .near.bss          zero     0x0000ea     0x2  fm.o [1]
+  .near.bss          zero     0x0000ec     0x2  fm.o [1]
+  .near.bss          zero     0x0000ee     0x2  fm.o [1]
+  .near.bss          zero     0x0000f0     0x2  fm.o [1]
+  .near.bss          zero     0x0000f2     0x2  gidro_trans.o [1]
+  .near.bss          zero     0x0000f4     0x2  menu.o [1]
+  .near.bss          zero     0x0000f6     0x2  menu.o [1]
+  .near.bss          zero     0x0000f8     0x2  menu.o [1]
+  .near.bss          zero     0x0000fa     0x2  menu.o [1]
+  .near.bss          zero     0x0000fc     0x2  menu.o [1]
+  .near.bss          zero     0x0000fe     0x2  menu.o [1]
+  .near.bss          zero     0x000100     0x2  menu.o [1]
+  .near.bss          zero     0x000102     0x2  menu.o [1]
+  .near.bss          zero     0x000104     0x2  menu.o [1]
+  .near.bss          zero     0x000106     0x2  menu.o [1]
+  .near.bss          zero     0x000108     0x2  menu.o [1]
+  .near.bss          zero     0x00010a     0x2  menu.o [1]
+  .near.bss          zero     0x00010c     0x2  menu.o [1]
+  .near.bss          zero     0x00010e     0x2  menu.o [1]
+  .near.bss          zero     0x000110     0x2  menu.o [1]
+  .near.bss          zero     0x000112     0x2  menu.o [1]
+  .near.bss          zero     0x000114     0x2  menu.o [1]
+  .near.bss          zero     0x000116     0x2  menu.o [1]
+  .near.bss          zero     0x000118     0x2  menu.o [1]
+  .near.bss          zero     0x00011a     0x2  menu.o [1]
+  .near.bss          zero     0x00011c     0x2  menu.o [1]
+  .near.bss          zero     0x00011e     0x2  menu.o [1]
+  .near.bss          zero     0x000120     0x2  menu.o [1]
+  .near.bss          zero     0x000122     0x2  menu.o [1]
+  .near.bss          zero     0x000124     0x2  menu.o [1]
+  .near.bss          zero     0x000126     0x2  menu.o [1]
+  .near.bss          zero     0x000128     0x2  menu.o [1]
+  .near.bss          zero     0x00012a     0x2  menu.o [1]
+  .near.bss          zero     0x00012c     0x2  menu.o [1]
+  .near.bss          zero     0x00012e     0x2  menu.o [1]
+  .near.bss          zero     0x000130     0x2  menu.o [1]
+  .near.bss          zero     0x000132     0x2  menu.o [1]
+  .near.bss          zero     0x000134     0x2  menu.o [1]
+  .near.bss          zero     0x000136     0x2  menu.o [1]
+  .near.bss          zero     0x000138     0x2  menu.o [1]
+  .near.bss          zero     0x00013a     0x2  menu.o [1]
+  .near.bss          zero     0x00013c     0x2  menu.o [1]
+  .near.bss          zero     0x00013e     0x2  menu.o [1]
+  .near.bss          zero     0x000140     0x2  menu.o [1]
+  .near.bss          zero     0x000142     0x2  set_pin.o [1]
+  .near.bss          zero     0x000144     0x2  set_pin.o [1]
+  .near.bss          zero     0x000146     0x2  speed.o [1]
+  .near.bss          zero     0x000148     0x2  speed.o [1]
+  .near.bss          zero     0x00014a     0x2  speed.o [1]
+  .near.bss          zero     0x00014c     0x2  valcoder.o [1]
+  .near.bss          zero     0x00014e     0x1  circle.o [1]
+  .near.bss          zero     0x00014f     0x1  circle.o [1]
+  .near.bss          zero     0x000150     0x1  fm.o [1]
+  .near.bss          zero     0x000151     0x1  menu.o [1]
+  .near.bss          zero     0x000152     0x1  menu.o [1]
+                            - 0x000153   0x135
+
+"A2":                                    0x100
+  CSTACK                      0x001700   0x100  <Block>
+    CSTACK           uninit   0x001700   0x100  <Block tail>
+                            - 0x001800   0x100
+
+Absolute sections, part 1 of 25:           0xf
+  .near.noinit       uninit   0x005001     0x1  speed.o [1]
+  .near.noinit       uninit   0x005002     0x1  set_pin.o [1]
+  .near.noinit       uninit   0x005003     0x1  set_pin.o [1]
+  .near.noinit       uninit   0x005004     0x1  set_pin.o [1]
+  .near.noinit       uninit   0x005005     0x1  speed.o [1]
+  .near.noinit       uninit   0x005006     0x1  main.o [1]
+  .near.noinit       uninit   0x005007     0x1  set_pin.o [1]
+  .near.noinit       uninit   0x005008     0x1  set_pin.o [1]
+  .near.noinit       uninit   0x005009     0x1  set_pin.o [1]
+  .near.noinit       uninit   0x00500a     0x1  set_pin.o [1]
+  .near.noinit       uninit   0x00500b     0x1  set_pin.o [1]
+  .near.noinit       uninit   0x00500c     0x1  set_pin.o [1]
+  .near.noinit       uninit   0x00500d     0x1  set_pin.o [1]
+  .near.noinit       uninit   0x00500e     0x1  set_pin.o [1]
+  .near.noinit       uninit   0x00500f     0x1  speed.o [1]
+                            - 0x005010     0xf
+
+Absolute sections, part 2 of 25:           0x4
+  .near.noinit       uninit   0x005011     0x1  set_pin.o [1]
+  .near.noinit       uninit   0x005012     0x1  set_pin.o [1]
+  .near.noinit       uninit   0x005013     0x1  set_pin.o [1]
+  .near.noinit       uninit   0x005014     0x1  main.o [1]
+                            - 0x005015     0x4
+
+Absolute sections, part 3 of 25:           0x2
+  .near.noinit       uninit   0x005016     0x1  lcd.o [1]
+  .near.noinit       uninit   0x005017     0x1  lcd.o [1]
+                            - 0x005018     0x2
+
+Absolute sections, part 4 of 25:           0x2
+  .near.noinit       uninit   0x005053     0x1  fm.o [1]
+  .near.noinit       uninit   0x005054     0x1  fm.o [1]
+                            - 0x005055     0x2
+
+Absolute sections, part 5 of 25:           0x2
+  .near.noinit       uninit   0x0050c0     0x1  clock.o [1]
+  .near.noinit       uninit   0x0050c1     0x1  clock.o [1]
+                            - 0x0050c2     0x2
+
+Absolute sections, part 6 of 25:           0x2
+  .near.noinit       uninit   0x0050c3     0x1  counter.o [1]
+  .near.noinit       uninit   0x0050c4     0x1  counter.o [1]
+                            - 0x0050c5     0x2
+
+Absolute sections, part 7 of 25:           0x3
+  .near.noinit       uninit   0x005140     0x1  clock.o [1]
+  .near.noinit       uninit   0x005141     0x1  clock.o [1]
+  .near.noinit       uninit   0x005142     0x1  clock.o [1]
+                            - 0x005143     0x3
+
+Absolute sections, part 8 of 25:           0x3
+  .near.noinit       uninit   0x005144     0x1  clock.o [1]
+  .near.noinit       uninit   0x005145     0x1  clock.o [1]
+  .near.noinit       uninit   0x005146     0x1  clock.o [1]
+                            - 0x005147     0x3
+
+Absolute sections, part 9 of 25:           0x1
+  .near.noinit       uninit   0x005148     0x1  clock.o [1]
+                            - 0x005149     0x1
+
+Absolute sections, part 10 of 25:          0x1
+  .near.noinit       uninit   0x00514c     0x1  clock.o [1]
+                            - 0x00514d     0x1
+
+Absolute sections, part 11 of 25:          0x3
+  .near.noinit       uninit   0x005150     0x1  clock.o [1]
+  .near.noinit       uninit   0x005151     0x1  clock.o [1]
+  .near.noinit       uninit   0x005152     0x1  clock.o [1]
+                            - 0x005153     0x3
+
+Absolute sections, part 12 of 25:          0x1
+  .near.noinit       uninit   0x005159     0x1  clock.o [1]
+                            - 0x00515a     0x1
+
+Absolute sections, part 13 of 25:          0x1
+  .near.noinit       uninit   0x005250     0x1  counter.o [1]
+                            - 0x005251     0x1
+
+Absolute sections, part 14 of 25:          0x2
+  .near.noinit       uninit   0x005255     0x1  counter.o [1]
+  .near.noinit       uninit   0x005256     0x1  counter.o [1]
+                            - 0x005257     0x2
+
+Absolute sections, part 15 of 25:          0x1
+  .near.noinit       uninit   0x00525e     0x1  counter.o [1]
+                            - 0x00525f     0x1
+
+Absolute sections, part 16 of 25:          0x1
+  .near.noinit       uninit   0x005280     0x1  counter.o [1]
+                            - 0x005281     0x1
+
+Absolute sections, part 17 of 25:          0x1
+  .near.noinit       uninit   0x005283     0x1  counter.o [1]
+                            - 0x005284     0x1
+
+Absolute sections, part 18 of 25:          0x2
+  .near.noinit       uninit   0x005285     0x1  counter.o [1]
+  .near.noinit       uninit   0x005286     0x1  counter.o [1]
+                            - 0x005287     0x2
+
+Absolute sections, part 19 of 25:          0x5
+  .near.noinit       uninit   0x00528c     0x1  counter.o [1]
+  .near.noinit       uninit   0x00528d     0x1  counter.o [1]
+  .near.noinit       uninit   0x00528e     0x1  counter.o [1]
+  .near.noinit       uninit   0x00528f     0x1  counter.o [1]
+  .near.noinit       uninit   0x005290     0x1  counter.o [1]
+                            - 0x005291     0x5
+
+Absolute sections, part 20 of 25:          0x1
+  .near.noinit       uninit   0x0052b0     0x1  counter.o [1]
+                            - 0x0052b1     0x1
+
+Absolute sections, part 21 of 25:          0x2
+  .near.noinit       uninit   0x0052b5     0x1  counter.o [1]
+  .near.noinit       uninit   0x0052b6     0x1  counter.o [1]
+                            - 0x0052b7     0x2
+
+Absolute sections, part 22 of 25:          0x4
+  .near.noinit       uninit   0x0052c1     0x1  counter.o [1]
+  .near.noinit       uninit   0x0052c2     0x1  counter.o [1]
+  .near.noinit       uninit   0x0052c3     0x1  counter.o [1]
+  .near.noinit       uninit   0x0052c4     0x1  counter.o [1]
+                            - 0x0052c5     0x4
+
+Absolute sections, part 23 of 25:          0x1
+  .near.noinit       uninit   0x0052e0     0x1  counter.o [1]
+                            - 0x0052e1     0x1
+
+Absolute sections, part 24 of 25:          0x2
+  .near.noinit       uninit   0x0052e4     0x1  counter.o [1]
+  .near.noinit       uninit   0x0052e5     0x1  counter.o [1]
+                            - 0x0052e6     0x2
+
+Absolute sections, part 25 of 25:          0x1
+  .near.noinit       uninit   0x0052e8     0x1  counter.o [1]
+                            - 0x0052e9     0x1
+
+"A3":                                     0x80
+  INTVEC                      0x008000    0x80  <Block>
+    .intvec          const    0x008000    0x80  interrupt.o [4]
+                            - 0x008080    0x80
+
+"P3":                                   0x3b99
+  .near_func.text    ro code  0x008080   0xb4c  menu.o [1]
+  .near_func.text    ro code  0x008bcc   0x4c2  float.o [4]
+  .near_func.text    ro code  0x00908e   0x45a  xprintffull_nomb.o [4]
+  .near_func.text    ro code  0x0094e8   0x426  xprintffull_nomb.o [4]
+  .near_func.text    ro code  0x00990e   0x383  xprintffull_nomb.o [4]
+  .near_func.text    ro code  0x009c91   0x233  flash.o [1]
+  .near_func.text    ro code  0x009ec4   0x1f7  long.o [4]
+  .near_func.text    ro code  0x00a0bb   0x185  flash.o [1]
+  .near_func.text    ro code  0x00a240   0x171  xprintffull_nomb.o [4]
+  .near_func.text    ro code  0x00a3b1   0x161  float_libsup.o [4]
+  .near_func.text    ro code  0x00a512   0x129  set_pin.o [1]
+  .near_func.text    ro code  0x00a63b   0x120  lcd.o [1]
+  .near_func.text    ro code  0x00a75b   0x115  vreg_util.o [4]
+  .near_func.text    ro code  0x00a870    0xa6  fm.o [1]
+  .near_func.text    ro code  0x00a916    0x8f  counter.o [1]
+  .near_func.text    ro code  0x00a9a5    0x7d  main.o [1]
+  .near_func.text    ro code  0x00aa22    0x74  clock.o [1]
+  .near_func.text    ro code  0x00aa96    0x72  long_util.o [4]
+  .near_func.text    ro code  0x00ab08    0x6e  counter.o [1]
+  .near_func.text    ro code  0x00ab76    0x65  fm.o [1]
+  .near_func.text    ro code  0x00abdb    0x56  fm.o [1]
+  .near_func.text    ro code  0x00ac31    0x56  gidro_trans.o [1]
+  .near_func.text    ro code  0x00ac87    0x56  menu.o [1]
+  .near_func.text    ro code  0x00acdd    0x56  speed.o [1]
+  .near_func.text    ro code  0x00ad33    0x53  fm.o [1]
+  .near_func.text    ro code  0x00ad86    0x52  speed.o [1]
+  .near_func.text    ro code  0x00add8    0x43  xprintffull_nomb.o [4]
+  .near_func.text    ro code  0x00ae1b    0x43  xprintffull_nomb.o [4]
+  .near_func.text    ro code  0x00ae5e    0x3e  fm.o [1]
+  .near_func.text    ro code  0x00ae9c    0x3e  sprintf.o [4]
+  .near_func.text    ro code  0x00aeda    0x3d  counter.o [1]
+  .near_func.text    ro code  0x00af17    0x3d  fm.o [1]
+  .near_func.text    const    0x00af54    0x3c  xprintffull_nomb.o [4]
+  .near_func.text    ro code  0x00af90    0x3b  alarm.o [1]
+  .near_func.text    ro code  0x00afcb    0x38  gidro_trans.o [1]
+  .near_func.text    ro code  0x00b003    0x37  short.o [4]
+  .near_func.text    ro code  0x00b03a    0x37  xprintffull_nomb.o [4]
+  .near_func.text    ro code  0x00b071    0x34  circle.o [1]
+  .near_func.text    ro code  0x00b0a5    0x33  valcoder.o [1]
+  .near_func.text    ro code  0x00b0d8    0x33  xprintffull_nomb.o [4]
+  .near_func.text    ro code  0x00b10b    0x31  lcd.o [1]
+  .near_func.text    ro code  0x00b13c    0x30  div.o [4]
+  .near_func.text    ro code  0x00b16c    0x2f  xprintffull_nomb.o [4]
+  .near_func.text    ro code  0x00b19b    0x2c  clock.o [1]
+  .near_func.text    ro code  0x00b1c7    0x2c  lcd.o [1]
+  .near_func.text    ro code  0x00b1f3    0x2c  dc_util.o [4]
+  .near_func.text    ro code  0x00b21f    0x2b  speed.o [1]
+  .near_func.text    ro code  0x00b24a    0x2a  lcd.o [1]
+  .near_func.text    ro code  0x00b274    0x28  init_small.o [4]
+  .near_func.text    ro code  0x00b29c    0x26  gidro_trans.o [1]
+  .near_func.text    ro code  0x00b2c2    0x26  set_pin.o [1]
+  .near_func.text    ro code  0x00b2e8    0x25  lcd.o [1]
+  .near_func.text    ro code  0x00b30d    0x25  memcpy.o [4]
+  .near_func.text    ro code  0x00b332    0x24  menu.o [1]
+  .iar.init_table    const    0x00b356    0x12  - Linker created -
+  .near_func.text    ro code  0x00b368    0x1f  counter.o [1]
+  .near_func.text    ro code  0x00b387    0x1e  init_small.o [4]
+  .near_func.text    ro code  0x00b3a5    0x1d  counter.o [1]
+  .near_func.text    ro code  0x00b3c2    0x1a  menu.o [1]
+  .near_func.text    ro code  0x00b3dc    0x18  memchr.o [4]
+  .near_func.text    ro code  0x00b3f4    0x17  clock.o [1]
+  .near_func.text    ro code  0x00b40b    0x17  init.o [4]
+  .near.rodata       const    0x00b422    0x16  clock.o [1]
+  .near.rodata       const    0x00b438    0x16  menu.o [1]
+  .near.rodata       const    0x00b44e    0x16  menu.o [1]
+  .near.rodata       const    0x00b464    0x16  menu.o [1]
+  .near_func.text    ro code  0x00b47a    0x15  strchr.o [4]
+  .near_func.text    ro code  0x00b48f    0x14  menu.o [1]
+  .near_func.text    ro code  0x00b4a3    0x14  xprintffull_nomb.o [4]
+  .near_func.text    ro code  0x00b4b7    0x13  gidro_trans.o [1]
+  .near_func.text    ro code  0x00b4ca    0x13  menu.o [1]
+  .near_func.text    ro code  0x00b4dd    0x13  cstartup.o [4]
+  .near.rodata       const    0x00b4f0    0x12  fm.o [1]
+  .near.rodata       const    0x00b502    0x12  fm.o [1]
+  .near.rodata       const    0x00b514    0x12  fm.o [1]
+  .near.rodata       const    0x00b526    0x12  fm.o [1]
+  .near.rodata       const    0x00b538    0x12  menu.o [1]
+  .near_func.text    ro code  0x00b54a    0x12  strlen.o [4]
+  .near.rodata       const    0x00b55c    0x11  clock.o [1]
+  .near.rodata       const    0x00b56d    0x11  main.o [1]
+  .near.rodata       const    0x00b57e    0x11  main.o [1]
+  .near.rodata       const    0x00b58f    0x11  menu.o [1]
+  .near.rodata       const    0x00b5a0    0x11  menu.o [1]
+  .near.rodata       const    0x00b5b1    0x11  menu.o [1]
+  .near.rodata       const    0x00b5c2    0x11  menu.o [1]
+  .near.rodata       const    0x00b5d3    0x11  menu.o [1]
+  .near.rodata       const    0x00b5e4    0x11  menu.o [1]
+  .near.rodata       const    0x00b5f5    0x11  menu.o [1]
+  .near.rodata       const    0x00b606    0x11  menu.o [1]
+  .near.rodata       const    0x00b617    0x11  menu.o [1]
+  .near.rodata       const    0x00b628    0x11  menu.o [1]
+  .near.rodata       const    0x00b639    0x11  menu.o [1]
+  .near.rodata       const    0x00b64a    0x11  menu.o [1]
+  .near.rodata       const    0x00b65b    0x11  menu.o [1]
+  .near.rodata       const    0x00b66c    0x11  menu.o [1]
+  .near.rodata       const    0x00b67d    0x11  menu.o [1]
+  .near.rodata       const    0x00b68e    0x11  menu.o [1]
+  .near.rodata       const    0x00b69f    0x11  menu.o [1]
+  .near.rodata       const    0x00b6b0    0x11  menu.o [1]
+  .near.rodata       const    0x00b6c1    0x11  menu.o [1]
+  .near.rodata       const    0x00b6d2    0x11  menu.o [1]
+  .near.rodata       const    0x00b6e3    0x11  menu.o [1]
+  .near.rodata       const    0x00b6f4    0x11  menu.o [1]
+  .near.rodata       const    0x00b705    0x11  menu.o [1]
+  .near.rodata       const    0x00b716    0x11  menu.o [1]
+  .near.rodata       const    0x00b727    0x11  menu.o [1]
+  .near.rodata       const    0x00b738    0x11  menu.o [1]
+  .near.rodata       const    0x00b749    0x11  menu.o [1]
+  .near.rodata       const    0x00b75a    0x11  menu.o [1]
+  .near.rodata       const    0x00b76b    0x11  menu.o [1]
+  .near.rodata       const    0x00b77c    0x11  menu.o [1]
+  .near.rodata       const    0x00b78d    0x11  menu.o [1]
+  .near.rodata       const    0x00b79e    0x11  menu.o [1]
+  .near.rodata       const    0x00b7af    0x11  menu.o [1]
+  .near.rodata       const    0x00b7c0    0x11  menu.o [1]
+  .near.rodata       const    0x00b7d1    0x11  menu.o [1]
+  .near.rodata       const    0x00b7e2    0x11  menu.o [1]
+  .near.rodata       const    0x00b7f3    0x11  menu.o [1]
+  .near.rodata       const    0x00b804    0x11  menu.o [1]
+  .near.rodata       const    0x00b815    0x11  menu.o [1]
+  .near.rodata       const    0x00b826    0x11  menu.o [1]
+  .near.rodata       const    0x00b837    0x11  menu.o [1]
+  .near.rodata       const    0x00b848    0x11  menu.o [1]
+  .near.rodata       const    0x00b859    0x11  menu.o [1]
+  .near.rodata       const    0x00b86a    0x11  menu.o [1]
+  .near.rodata       const    0x00b87b    0x11  menu.o [1]
+  .near.rodata       const    0x00b88c    0x11  menu.o [1]
+  .near.rodata       const    0x00b89d    0x11  menu.o [1]
+  .near_func.text    ro code  0x00b8ae    0x11  counter.o [1]
+  .near_func.text    ro code  0x00b8bf    0x11  counter.o [1]
+  .near_func.text    ro code  0x00b8d0    0x11  menu.o [1]
+  .near_func.text    ro code  0x00b8e1    0x11  menu.o [1]
+  .near_func.text    ro code  0x00b8f2    0x10  flash.o [1]
+  .near_func.text    ro code  0x00b902    0x10  menu.o [1]
+  .near_func.text    ro code  0x00b912    0x10  xprintffull_nomb.o [4]
+  .near_func.text    ro code  0x00b922     0xe  menu.o [1]
+  .near_func.text    ro code  0x00b930     0xe  menu.o [1]
+  .near_func.text    ro code  0x00b93e     0xe  xsprout.o [4]
+  Initializer bytes  const    0x00b94c     0xe  <for P2-1>
+  .near_func.text    ro code  0x00b95a     0xd  clock.o [1]
+  .near_func.text    ro code  0x00b967     0xd  menu.o [1]
+  .near_func.text    ro code  0x00b974     0xd  move.o [4]
+  .near.rodata       const    0x00b981     0xc  menu.o [1]
+  .near_func.text    ro code  0x00b98d     0xc  counter.o [1]
+  .near_func.text    ro code  0x00b999     0xc  gidro_trans.o [1]
+  .near_func.text    ro code  0x00b9a5     0xc  menu.o [1]
+  .near_func.text    ro code  0x00b9b1     0xc  menu.o [1]
+  .near_func.text    ro code  0x00b9bd     0xc  char.o [4]
+  .near_func.text    ro code  0x00b9c9     0xc  switch.o [4]
+  .near_func.text    ro code  0x00b9d5     0xb  menu.o [1]
+  .near_func.text    ro code  0x00b9e0     0xb  menu.o [1]
+  .near_func.text    ro code  0x00b9eb     0xb  menu.o [1]
+  .near_func.text    ro code  0x00b9f6     0xb  xprintffull_nomb.o [4]
+  .near_func.text    ro code  0x00ba01     0xb  xprintffull_nomb.o [4]
+  .near_func.text    ro code  0x00ba0c     0xa  fm.o [1]
+  .near_func.text    ro code  0x00ba16     0xa  gidro_trans.o [1]
+  .near_func.text    ro code  0x00ba20     0xa  menu.o [1]
+  .near_func.text    ro code  0x00ba2a     0xa  menu.o [1]
+  .near_func.text    ro code  0x00ba34     0xa  menu.o [1]
+  .near_func.text    ro code  0x00ba3e     0xa  speed.o [1]
+  .near_func.text    ro code  0x00ba48     0xa  xprintffull_nomb.o [4]
+  .near_func.text    ro code  0x00ba52     0xa  xprintffull_nomb.o [4]
+  .near_func.text    ro code  0x00ba5c     0xa  xprintffull_nomb.o [4]
+  .near_func.text    ro code  0x00ba66     0x9  clock.o [1]
+  .near_func.text    ro code  0x00ba6f     0x9  fm.o [1]
+  .near_func.text    ro code  0x00ba78     0x9  fm.o [1]
+  .near_func.text    ro code  0x00ba81     0x9  fm.o [1]
+  .near_func.text    ro code  0x00ba8a     0x9  gidro_trans.o [1]
+  .near_func.text    ro code  0x00ba93     0x9  menu.o [1]
+  .near_func.text    ro code  0x00ba9c     0x9  menu.o [1]
+  .near_func.text    ro code  0x00baa5     0x9  menu.o [1]
+  .near_func.text    ro code  0x00baae     0x9  menu.o [1]
+  .near_func.text    ro code  0x00bab7     0x9  menu.o [1]
+  .near_func.text    ro code  0x00bac0     0x9  speed.o [1]
+  .near_func.text    ro code  0x00bac9     0x9  xprintffull_nomb.o [4]
+  .near_func.text    ro code  0x00bad2     0x9  xprintffull_nomb.o [4]
+  .near_func.text    ro code  0x00badb     0x9  xprintffull_nomb.o [4]
+  .near_func.text    ro code  0x00bae4     0x8  flash.o [1]
+  .near_func.text    ro code  0x00baec     0x8  menu.o [1]
+  .near_func.text    ro code  0x00baf4     0x8  xprintffull_nomb.o [4]
+  .near_func.text    ro code  0x00bafc     0x8  xprintffull_nomb.o [4]
+  .near.rodata       const    0x00bb04     0x7  xprintffull_nomb.o [4]
+  .near_func.text    ro code  0x00bb0b     0x7  flash.o [1]
+  .near_func.text    ro code  0x00bb12     0x7  menu.o [1]
+  .near_func.text    ro code  0x00bb19     0x7  menu.o [1]
+  .near_func.text    ro code  0x00bb20     0x7  menu.o [1]
+  .near_func.text    ro code  0x00bb27     0x7  menu.o [1]
+  .near_func.text    ro code  0x00bb2e     0x7  menu.o [1]
+  .near_func.text    ro code  0x00bb35     0x7  menu.o [1]
+  .near_func.text    ro code  0x00bb3c     0x7  menu.o [1]
+  .near_func.text    ro code  0x00bb43     0x7  menu.o [1]
+  .near_func.text    ro code  0x00bb4a     0x7  menu.o [1]
+  .near_func.text    ro code  0x00bb51     0x7  menu.o [1]
+  .near_func.text    ro code  0x00bb58     0x7  menu.o [1]
+  .near_func.text    ro code  0x00bb5f     0x7  menu.o [1]
+  .near_func.text    ro code  0x00bb66     0x7  menu.o [1]
+  .near_func.text    ro code  0x00bb6d     0x7  speed.o [1]
+  .near_func.text    ro code  0x00bb74     0x7  xprintffull_nomb.o [4]
+  .near_func.text    ro code  0x00bb7b     0x7  xprintffull_nomb.o [4]
+  .near_func.text    ro code  0x00bb82     0x7  xprintffull_nomb.o [4]
+  .near_func.text    ro code  0x00bb89     0x6  menu.o [1]
+  .near_func.text    ro code  0x00bb8f     0x6  menu.o [1]
+  .near_func.text    ro code  0x00bb95     0x6  menu.o [1]
+  .near_func.text    ro code  0x00bb9b     0x6  menu.o [1]
+  .near_func.text    ro code  0x00bba1     0x6  menu.o [1]
+  .near_func.text    ro code  0x00bba7     0x6  menu.o [1]
+  .near_func.text    ro code  0x00bbad     0x6  menu.o [1]
+  .near_func.text    ro code  0x00bbb3     0x6  menu.o [1]
+  .near_func.text    ro code  0x00bbb9     0x6  xprintffull_nomb.o [4]
+  .near_func.text    ro code  0x00bbbf     0x6  xprintffull_nomb.o [4]
+  .near_func.text    ro code  0x00bbc5     0x6  xprintffull_nomb.o [4]
+  .near_func.text    ro code  0x00bbcb     0x6  xprintffull_nomb.o [4]
+  .near_func.text    ro code  0x00bbd1     0x5  flash.o [1]
+  .near_func.text    ro code  0x00bbd6     0x5  menu.o [1]
+  .near_func.text    ro code  0x00bbdb     0x5  xprintffull_nomb.o [4]
+  .near_func.text    ro code  0x00bbe0     0x5  cexit.o [4]
+  .near.rodata       const    0x00bbe5     0x4  xprintffull_nomb.o [4]
+  .near.rodata       const    0x00bbe9     0x4  xprintffull_nomb.o [4]
+  .near.rodata       const    0x00bbed     0x4  xprintffull_nomb.o [4]
+  .near.rodata       const    0x00bbf1     0x4  xprintffull_nomb.o [4]
+  .near_func.text    ro code  0x00bbf5     0x4  menu.o [1]
+  .near_func.text    ro code  0x00bbf9     0x4  menu.o [1]
+  .near_func.text    ro code  0x00bbfd     0x4  menu.o [1]
+  .near_func.text    ro code  0x00bc01     0x4  menu.o [1]
+  .near_func.text    ro code  0x00bc05     0x4  menu.o [1]
+  .near_func.text    ro code  0x00bc09     0x3  interrupt.o [4]
+  .near_func.text    ro code  0x00bc0c     0x3  low_level_init.o [4]
+  .near_func.text    ro code  0x00bc0f     0x3  exit.o [4]
+  .near_func.text    ro code  0x00bc12     0x3  unhandled_exception.o [4]
+  .near.rodata       const    0x00bc15     0x2  xprintffull_nomb.o [4]
+  .near_func.text    ro code  0x00bc17     0x2  xxexit.o [3]
+                            - 0x00bc19  0x3b99
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address   Size
+          -------   ----
+Zero (__iar_zero_init2)
+    1 destination range, total size 0x135:
+          0x00001e  0x135
+
+Copy (__iar_copy_init2)
+    1 source range, total size 0xe:
+          0x00b94c    0xe
+    1 destination range, total size 0xe:
+          0x000010    0xe
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module                 ro code  ro data  rw data  rw data
+                                                       (abs)
+    ------                 -------  -------  -------  -------
+D:\Radio\MK\STM\STM8L\COPY_Avto_Comp\Release\Obj: [1]
+    alarm.o                     59
+    circle.o                    52                10
+    clock.o                    205       39       16       14
+    counter.o                  420                30       26
+    flash.o                    988                56
+    fm.o                       596       79       70        2
+    gidro_trans.o              230        2        4
+    lcd.o                      460        1       33        2
+    main.o                     125       34                 2
+    menu.o                   3 474      897       90
+    set_pin.o                  335                 4       14
+    speed.o                    237        2        8        3
+    valcoder.o                  51                 2
+    ---------------------------------------------------------
+    Total:                   7 232    1 054      323       63
+
+command line: [2]
+    ---------------------------------------------------------
+    Total:
+
+dbgstm8smn.a: [3]
+    xxexit.o                     2
+    ---------------------------------------------------------
+    Total:                       2
+
+dlstm8smn.a: [4]
+    cexit.o                      5
+    char.o                      12
+    cstartup.o                  19
+    dc_util.o                   44
+    div.o                       48
+    exit.o                       3
+    float.o                  1 218
+    float_libsup.o             353
+    init.o                      23
+    init_small.o                70
+    interrupt.o                  3      128
+    long.o                     503
+    long_util.o                114
+    low_level_init.o             3
+    memchr.o                    24
+    memcpy.o                    37
+    move.o                      13
+    short.o                     55
+    sprintf.o                   62
+    strchr.o                    21
+    strlen.o                    18
+    switch.o                    12
+    unhandled_exception.o        3
+    vreg_util.o                277
+    vregs.o                                       16
+    xprintffull_nomb.o       3 912       85
+    xsprout.o                   14
+    ---------------------------------------------------------
+    Total:                   6 866      213       16
+
+    Linker created                       18      256
+-------------------------------------------------------------
+    Grand Total:            14 100    1 285      595       63
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                    Address   Size  Type      Object
+-----                    -------   ----  ----      ------
+.iar.init_table$$Base   0x00b356          --   Gb  - Linker created -
+.iar.init_table$$Limit  0x00b368          --   Gb  - Linker created -
+?and32_l0_l0_0x         0x00a049         Code  Gb  long.o [4]
+?and32_l0_l0_l1         0x00a046         Code  Gb  long.o [4]
+?b0                     0x000000         Data  Gb  vregs.o [4]
+?b1                     0x000001         Data  Gb  vregs.o [4]
+?b10                    0x00000a         Data  Gb  vregs.o [4]
+?b11                    0x00000b         Data  Gb  vregs.o [4]
+?b12                    0x00000c         Data  Gb  vregs.o [4]
+?b13                    0x00000d         Data  Gb  vregs.o [4]
+?b14                    0x00000e         Data  Gb  vregs.o [4]
+?b15                    0x00000f         Data  Gb  vregs.o [4]
+?b2                     0x000002         Data  Gb  vregs.o [4]
+?b3                     0x000003         Data  Gb  vregs.o [4]
+?b4                     0x000004         Data  Gb  vregs.o [4]
+?b5                     0x000005         Data  Gb  vregs.o [4]
+?b6                     0x000006         Data  Gb  vregs.o [4]
+?b7                     0x000007         Data  Gb  vregs.o [4]
+?b8                     0x000008         Data  Gb  vregs.o [4]
+?b9                     0x000009         Data  Gb  vregs.o [4]
+?dc32_l0                0x00b1fa         Code  Gb  dc_util.o [4]
+?dc32_l1                0x00b207         Code  Gb  dc_util.o [4]
+?dc32_px                0x00b214         Code  Gb  dc_util.o [4]
+?dc8_px                 0x00b1f3         Code  Gb  dc_util.o [4]
+?e0                     0x000001         Data  Gb  vregs.o [4]
+?e1                     0x000005         Data  Gb  vregs.o [4]
+?e2                     0x000009         Data  Gb  vregs.o [4]
+?e3                     0x00000d         Data  Gb  vregs.o [4]
+?epilogue_l2            0x00a7e9         Code  Gb  vreg_util.o [4]
+?epilogue_l2_w6         0x00a7ed         Code  Gb  vreg_util.o [4]
+?epilogue_w4            0x00a7f4         Code  Gb  vreg_util.o [4]
+?fadd32_l0_l0_dc32      0x008bef         Code  Gb  float.o [4]
+?fadd32_l0_l0_l1        0x008bf4         Code  Gb  float.o [4]
+?fcastf32s32_l0_l0      0x008f49         Code  Gb  float.o [4]
+?fcastf32u16_l0_x       0x008e7e         Code  Gb  float.o [4]
+?fcastf32u32_l0_l0      0x008f54         Code  Gb  float.o [4]
+?fcasts16f32_x_l0       0x008e9c         Code  Gb  float.o [4]
+?fcasts32f32_l0_l0      0x008ee8         Code  Gb  float.o [4]
+?fcastu32f32_l0_l0      0x008ed1         Code  Gb  float.o [4]
+?fcmpge32_c_l0_0x       0x008e1f         Code  Gb  float.o [4]
+?fcmpge32_c_l0_dc32     0x008e1a         Code  Gb  float.o [4]
+?fcmplt32_c_l0_0x       0x008e28         Code  Gb  float.o [4]
+?fcmplt32_c_l0_dc32     0x008e23         Code  Gb  float.o [4]
+?fdiv32_l0_dc32_l1      0x008d62         Code  Gb  float.o [4]
+?fdiv32_l0_l0_dc32      0x008d67         Code  Gb  float.o [4]
+?fdiv32_l0_l0_l1        0x008d6c         Code  Gb  float.o [4]
+?fmul32_l0_l0_dc32      0x008cc2         Code  Gb  float.o [4]
+?fmul32_l0_l0_l1        0x008cc7         Code  Gb  float.o [4]
+?fsub32_l0_l0_l1        0x008be9         Code  Gb  float.o [4]
+?inc32_0x_0x            0x009ed9         Code  Gb  long.o [4]
+?inc32_l0_l0            0x009ed4         Code  Gb  long.o [4]
+?l0                     0x000000         Data  Gb  vregs.o [4]
+?l1                     0x000004         Data  Gb  vregs.o [4]
+?l2                     0x000008         Data  Gb  vregs.o [4]
+?l3                     0x00000c         Data  Gb  vregs.o [4]
+?load32_0x_l0           0x00aadb         Code  Gb  long_util.o [4]
+?load32_0x_l2           0x00aafa         Code  Gb  long_util.o [4]
+?load32_asp_l0          0x00aacf         Code  Gb  long_util.o [4]
+?load32_asp_l2          0x00aaee         Code  Gb  long_util.o [4]
+?load32_dbsp_l0         0x00aaca         Code  Gb  long_util.o [4]
+?load32_dbsp_l2         0x00aae9         Code  Gb  long_util.o [4]
+?load32_l0_0x           0x00aaa6         Code  Gb  long_util.o [4]
+?load32_l0_asp          0x00aa9b         Code  Gb  long_util.o [4]
+?load32_l0_dbsp         0x00aa96         Code  Gb  long_util.o [4]
+?load32_l0_xsp          0x00aa9d         Code  Gb  long_util.o [4]
+?load32_l1_0x           0x00aab2         Code  Gb  long_util.o [4]
+?load32_l2_0x           0x00aabe         Code  Gb  long_util.o [4]
+?load32_xsp_l0          0x00aad1         Code  Gb  long_util.o [4]
+?load32_xsp_l2          0x00aaf0         Code  Gb  long_util.o [4]
+?mov_e0_e1              0x00a825         Code  Gb  vreg_util.o [4]
+?mov_e0_e2              0x00a832         Code  Gb  vreg_util.o [4]
+?mov_e1_e0              0x00a83f         Code  Gb  vreg_util.o [4]
+?mov_e1_e2              0x00a84c         Code  Gb  vreg_util.o [4]
+?mov_e2_e0              0x00a859         Code  Gb  vreg_util.o [4]
+?mov_e2_e1              0x00a866         Code  Gb  vreg_util.o [4]
+?mov_l0_l1              0x00a822         Code  Gb  vreg_util.o [4]
+?mov_l0_l2              0x00a82f         Code  Gb  vreg_util.o [4]
+?mov_l1_l0              0x00a83c         Code  Gb  vreg_util.o [4]
+?mov_l1_l2              0x00a849         Code  Gb  vreg_util.o [4]
+?mov_l2_l0              0x00a856         Code  Gb  vreg_util.o [4]
+?mov_l2_l1              0x00a863         Code  Gb  vreg_util.o [4]
+?mov_w0_w5              0x00a7f8         Code  Gb  vreg_util.o [4]
+?mov_w1_w3              0x00a828         Code  Gb  vreg_util.o [4]
+?mov_w1_w5              0x00a835         Code  Gb  vreg_util.o [4]
+?mov_w2_w0              0x00a7ff         Code  Gb  vreg_util.o [4]
+?mov_w2_w1              0x00a806         Code  Gb  vreg_util.o [4]
+?mov_w3_w1              0x00a842         Code  Gb  vreg_util.o [4]
+?mov_w3_w5              0x00a84f         Code  Gb  vreg_util.o [4]
+?mov_w4_w0              0x00a80d         Code  Gb  vreg_util.o [4]
+?mov_w4_w1              0x00a814         Code  Gb  vreg_util.o [4]
+?mov_w5_w0              0x00a81b         Code  Gb  vreg_util.o [4]
+?mov_w5_w1              0x00a85c         Code  Gb  vreg_util.o [4]
+?mov_w5_w3              0x00a869         Code  Gb  vreg_util.o [4]
+?move1616_v_x_y_a       0x00b974         Code  Gb  move.o [4]
+?mul16_x_x_w0           0x00b003         Code  Gb  short.o [4]
+?mul32_l0_l0_0x         0x009eea         Code  Gb  long.o [4]
+?mul32_l0_l0_dl         0x009ee7         Code  Gb  long.o [4]
+?mul32_l0_l0_l1         0x009ef3         Code  Gb  long.o [4]
+?neg32_l0_l0            0x009ec4         Code  Gb  long.o [4]
+?or32_l0_l0_0x          0x00a061         Code  Gb  long.o [4]
+?pop_l0                 0x00a7cb         Code  Gb  vreg_util.o [4]
+?pop_l2                 0x00a7d6         Code  Gb  vreg_util.o [4]
+?pop_w0                 0x00a787         Code  Gb  vreg_util.o [4]
+?pop_w4                 0x00a78e         Code  Gb  vreg_util.o [4]
+?pop_w6                 0x00a795         Code  Gb  vreg_util.o [4]
+?push_l0                0x00a7a4         Code  Gb  vreg_util.o [4]
+?push_l2                0x00a7a9         Code  Gb  vreg_util.o [4]
+?push_w0                0x00a75b         Code  Gb  vreg_util.o [4]
+?push_w1                0x00a760         Code  Gb  vreg_util.o [4]
+?push_w2                0x00a765         Code  Gb  vreg_util.o [4]
+?push_w4                0x00a76a         Code  Gb  vreg_util.o [4]
+?push_w6                0x00a76f         Code  Gb  vreg_util.o [4]
+?scmp32_c_l0_l1         0x00a02f         Code  Gb  long.o [4]
+?sdiv16_x_x_y           0x00b021         Code  Gb  short.o [4]
+?sdiv32_l0_l0_dl        0x009fe6         Code  Gb  long.o [4]
+?sdiv32_l0_l0_l1        0x009fe9         Code  Gb  long.o [4]
+?sext32_l0_a            0x00a0ae         Code  Gb  long.o [4]
+?sext32_l0_x            0x00a0a3         Code  Gb  long.o [4]
+?sll32_0x_0x_a          0x00a080         Code  Gb  long.o [4]
+?sll32_l0_l0_a          0x00a07d         Code  Gb  long.o [4]
+?sll32_l0_l0_db         0x00a079         Code  Gb  long.o [4]
+?sll8_a_a_5             0x00b9be         Code  Gb  char.o [4]
+?sll8_a_a_6             0x00b9bd         Code  Gb  char.o [4]
+?smod32_l1_l0_l1        0x009fe9         Code  Gb  long.o [4]
+?sra32_0x_0x_a          0x00a095         Code  Gb  long.o [4]
+?sra32_l0_l0_a          0x00a092         Code  Gb  long.o [4]
+?sra32_l0_l0_db         0x00a08e         Code  Gb  long.o [4]
+?srl8_a_a_5             0x00b9c4         Code  Gb  char.o [4]
+?srl8_a_a_6             0x00b9c3         Code  Gb  char.o [4]
+?switch8vlt_0x_a_0x     0x00b9c9         Code  Gb  switch.o [4]
+?udiv32_l0_l0_dl        0x009f76         Code  Gb  long.o [4]
+?udiv32_l0_l0_l1        0x009f79         Code  Gb  long.o [4]
+?umod32_l1_l0_dl        0x009f71         Code  Gb  long.o [4]
+?umod32_l1_l0_l1        0x009f79         Code  Gb  long.o [4]
+?w0                     0x000000         Data  Gb  vregs.o [4]
+?w1                     0x000002         Data  Gb  vregs.o [4]
+?w2                     0x000004         Data  Gb  vregs.o [4]
+?w3                     0x000006         Data  Gb  vregs.o [4]
+?w4                     0x000008         Data  Gb  vregs.o [4]
+?w5                     0x00000a         Data  Gb  vregs.o [4]
+?w6                     0x00000c         Data  Gb  vregs.o [4]
+?w7                     0x00000e         Data  Gb  vregs.o [4]
+CSTACK$$Base            0x001700          --   Gb  - Linker created -
+CSTACK$$Limit           0x001800          --   Gb  - Linker created -
+FLASH_DUKR              0x005053    0x1  Data  Gb  fm.o [1]
+GetNum                  0x00b3f4   0x17  Code  Gb  clock.o [1]
+INTVEC$$Base            0x008000          --   Gb  - Linker created -
+INTVEC$$Limit           0x008080          --   Gb  - Linker created -
+LoadInt                 0x00add8   0x43  Code  Lc  xprintffull_nomb.o [4]
+NewState                0x0000a0    0x2  Data  Gb  counter.o [1]
+OldState                0x0000a2    0x2  Data  Gb  counter.o [1]
+RTC_WPR                 0x005159    0x1  Data  Gb  clock.o [1]
+Region$$Table$$Base     0x00b356          --   Gb  - Linker created -
+Region$$Table$$Limit    0x00b368          --   Gb  - Linker created -
+TIM1_UIF                0x00aeda   0x3d  Code  Gb  counter.o [1]
+TIM2_UIF                0x00b98d    0xc  Code  Gb  counter.o [1]
+TIM3_UIF                0x00ab08   0x6e  Code  Gb  counter.o [1]
+TIM4_UIF                0x00a916   0x8f  Code  Gb  counter.o [1]
+Vol                     0x00014c    0x2  Data  Gb  valcoder.o [1]
+_A_CLK_CKDIVR           0x0050c0    0x1  Data  Gb  clock.o [1]
+_A_CLK_CRTCR            0x0050c1    0x1  Data  Gb  clock.o [1]
+_A_CLK_PCKENR1          0x0050c3    0x1  Data  Gb  counter.o [1]
+_A_CLK_PCKENR2          0x0050c4    0x1  Data  Gb  counter.o [1]
+_A_FLASH_IAPSR          0x005054    0x1  Data  Gb  fm.o [1]
+_A_PA_CR1               0x005003    0x1  Data  Gb  set_pin.o [1]
+_A_PA_CR2               0x005004    0x1  Data  Gb  set_pin.o [1]
+_A_PA_DDR               0x005002    0x1  Data  Gb  set_pin.o [1]
+_A_PA_IDR               0x005001    0x1  Data  Gb  speed.o [1]
+_A_PB_CR1               0x005008    0x1  Data  Gb  set_pin.o [1]
+_A_PB_CR2               0x005009    0x1  Data  Gb  set_pin.o [1]
+_A_PB_DDR               0x005007    0x1  Data  Gb  set_pin.o [1]
+_A_PB_IDR               0x005006    0x1  Data  Gb  main.o [1]
+_A_PB_ODR               0x005005    0x1  Data  Gb  speed.o [1]
+_A_PC_CR1               0x00500d    0x1  Data  Gb  set_pin.o [1]
+_A_PC_CR2               0x00500e    0x1  Data  Gb  set_pin.o [1]
+_A_PC_DDR               0x00500c    0x1  Data  Gb  set_pin.o [1]
+_A_PC_IDR               0x00500b    0x1  Data  Gb  set_pin.o [1]
+_A_PC_ODR               0x00500a    0x1  Data  Gb  set_pin.o [1]
+_A_PD_CR1               0x005012    0x1  Data  Gb  set_pin.o [1]
+_A_PD_CR2               0x005013    0x1  Data  Gb  set_pin.o [1]
+_A_PD_DDR               0x005011    0x1  Data  Gb  set_pin.o [1]
+_A_PD_ODR               0x00500f    0x1  Data  Gb  speed.o [1]
+_A_PE_CR1               0x005017    0x1  Data  Gb  lcd.o [1]
+_A_PE_DDR               0x005016    0x1  Data  Gb  lcd.o [1]
+_A_PE_ODR               0x005014    0x1  Data  Gb  main.o [1]
+_A_RTC_APRER            0x005152    0x1  Data  Gb  clock.o [1]
+_A_RTC_CR1              0x005148    0x1  Data  Gb  clock.o [1]
+_A_RTC_DR1              0x005144    0x1  Data  Gb  clock.o [1]
+_A_RTC_DR2              0x005145    0x1  Data  Gb  clock.o [1]
+_A_RTC_DR3              0x005146    0x1  Data  Gb  clock.o [1]
+_A_RTC_ISR1             0x00514c    0x1  Data  Gb  clock.o [1]
+_A_RTC_SPRERH           0x005150    0x1  Data  Gb  clock.o [1]
+_A_RTC_SPRERL           0x005151    0x1  Data  Gb  clock.o [1]
+_A_RTC_TR1              0x005140    0x1  Data  Gb  clock.o [1]
+_A_RTC_TR2              0x005141    0x1  Data  Gb  clock.o [1]
+_A_RTC_TR3              0x005142    0x1  Data  Gb  clock.o [1]
+_A_TIM1_ARRH            0x0052c3    0x1  Data  Gb  counter.o [1]
+_A_TIM1_ARRL            0x0052c4    0x1  Data  Gb  counter.o [1]
+_A_TIM1_CR1             0x0052b0    0x1  Data  Gb  counter.o [1]
+_A_TIM1_IER             0x0052b5    0x1  Data  Gb  counter.o [1]
+_A_TIM1_PSCRH           0x0052c1    0x1  Data  Gb  counter.o [1]
+_A_TIM1_PSCRL           0x0052c2    0x1  Data  Gb  counter.o [1]
+_A_TIM1_SR1             0x0052b6    0x1  Data  Gb  counter.o [1]
+_A_TIM2_CR1             0x005250    0x1  Data  Gb  counter.o [1]
+_A_TIM2_IER             0x005255    0x1  Data  Gb  counter.o [1]
+_A_TIM2_PSCR            0x00525e    0x1  Data  Gb  counter.o [1]
+_A_TIM2_SR1             0x005256    0x1  Data  Gb  counter.o [1]
+_A_TIM3_ARRH            0x00528f    0x1  Data  Gb  counter.o [1]
+_A_TIM3_ARRL            0x005290    0x1  Data  Gb  counter.o [1]
+_A_TIM3_CNTRH           0x00528c    0x1  Data  Gb  counter.o [1]
+_A_TIM3_CNTRL           0x00528d    0x1  Data  Gb  counter.o [1]
+_A_TIM3_CR1             0x005280    0x1  Data  Gb  counter.o [1]
+_A_TIM3_ETR             0x005283    0x1  Data  Gb  counter.o [1]
+_A_TIM3_IER             0x005285    0x1  Data  Gb  counter.o [1]
+_A_TIM3_PSCR            0x00528e    0x1  Data  Gb  counter.o [1]
+_A_TIM3_SR1             0x005286    0x1  Data  Gb  counter.o [1]
+_A_TIM4_CR1             0x0052e0    0x1  Data  Gb  counter.o [1]
+_A_TIM4_IER             0x0052e4    0x1  Data  Gb  counter.o [1]
+_A_TIM4_PSCR            0x0052e8    0x1  Data  Gb  counter.o [1]
+_A_TIM4_SR1             0x0052e5    0x1  Data  Gb  counter.o [1]
+_GenldFullNoMb          0x00990e  0x383  Code  Lc  xprintffull_nomb.o [4]
+_LdtobFullNoMb          0x0094e8  0x426  Code  Lc  xprintffull_nomb.o [4]
+_LitobFullNoMb          0x00a240  0x171  Code  Lc  xprintffull_nomb.o [4]
+_PrintfFullNoMb         0x00908e  0x45a  Code  Gb  xprintffull_nomb.o [4]
+_PutcharFullNoMb        0x00b16c   0x2f  Code  Lc  xprintffull_nomb.o [4]
+_PutcharsFullNoMb       0x00b0d8   0x33  Code  Lc  xprintffull_nomb.o [4]
+_SProut                 0x00b93e    0xe  Code  Gb  xsprout.o [4]
+__exit                  0x00bc17    0x2  Code  Gb  xxexit.o [3]
+__iar_Dnorm             0x00a3b1         Code  Gb  float_libsup.o [4]
+__iar_Dscale            0x00a43f         Code  Gb  float_libsup.o [4]
+__iar_Dunscale          0x00a3ed         Code  Gb  float_libsup.o [4]
+__iar_Memchr            0x00b3dc   0x18  Code  Gb  memchr.o [4]
+__iar_Strchr            0x00b47a   0x15  Code  Gb  strchr.o [4]
+__iar_copy_init2        0x00b274         Code  Gb  init_small.o [4]
+__iar_data_init2        0x00b40b   0x17  Code  Gb  init.o [4]
+__iar_program_start     0x00b4dd         Code  Gb  cstartup.o [4]
+__iar_unhandled_exception
+                        0x00bc12         Code  Gb  unhandled_exception.o [4]
+__iar_zero_init2        0x00b387         Code  Gb  init_small.o [4]
+__intvec                0x008000         Data  Gb  interrupt.o [4]
+__low_level_init        0x00bc0c    0x3  Code  Gb  low_level_init.o [4]
+_exit                   0x00bbe0         Code  Gb  cexit.o [4]
+_interrupt_21           0x00b98d         Code  Gb  counter.o [1]
+_interrupt_23           0x00ab08         Code  Gb  counter.o [1]
+_interrupt_25           0x00aeda         Code  Gb  counter.o [1]
+_interrupt_27           0x00a916         Code  Gb  counter.o [1]
+arh                     0x00014e    0x1  Data  Gb  circle.o [1]
+arl                     0x00014f    0x1  Data  Gb  circle.o [1]
+buf1                    0x00004e   0x10  Data  Gb  lcd.o [1]
+buf2                    0x00005e   0x10  Data  Gb  lcd.o [1]
+byte                    0x00007a    0x4  Data  Gb  flash.o [1]
+clock_1                 0x000094    0x2  Data  Gb  clock.o [1]
+clock_2                 0x000096    0x2  Data  Gb  clock.o [1]
+clock_3                 0x000098    0x2  Data  Gb  clock.o [1]
+clock_ini               0x00b19b   0x2c  Code  Gb  clock.o [1]
+clock_one               0x00009a    0x2  Data  Gb  clock.o [1]
+clock_out               0x00aa22   0x74  Code  Gb  clock.o [1]
+clock_two               0x00009c    0x2  Data  Gb  clock.o [1]
+cnt                     0x00014a    0x2  Data  Gb  speed.o [1]
+cpu_aux                 0x00b2c2   0x26  Code  Gb  set_pin.o [1]
+d                       0x00009e    0x2  Data  Gb  counter.o [1]
+datafm                  0x00001e   0x30  Data  Gb  fm.o [1]
+ddl                     0x00006e    0x4  Data  Gb  circle.o [1]
+ddll                    0x00008c    0x2  Data  Gb  circle.o [1]
+delay                   0x00a63b    0x9  Code  Gb  lcd.o [1]
+delay_audio             0x00bb6d    0x7  Code  Gb  speed.o [1]
+diametr                 0x00b071   0x34  Code  Gb  circle.o [1]
+div                     0x00b13c   0x30  Code  Gb  div.o [4]
+dl                      0x00008a    0x2  Data  Gb  circle.o [1]
+downState               0x0000a6    0x2  Data  Gb  counter.o [1]
+exit                    0x00bc0f    0x3  Code  Gb  exit.o [4]
+fg                      0x0000f0    0x2  Data  Gb  fm.o [1]
+fgset                   0x000014    0x1  Data  Gb  fm.o [1]
+flag                    0x0000f2    0x2  Data  Gb  gidro_trans.o [1]
+fm_p_one                0x0000ec    0x2  Data  Gb  fm.o [1]
+fm_p_two                0x00007e    0x4  Data  Gb  fm.o [1]
+fm_stroka_one           0x0000e8    0x2  Data  Gb  fm.o [1]
+fm_stroka_two           0x0000ea    0x2  Data  Gb  fm.o [1]
+gidrotransformator_off  0x00afcb   0x38  Code  Gb  gidro_trans.o [1]
+gidrotransformator_on   0x00b29c   0x26  Code  Gb  gidro_trans.o [1]
+input_air_filter        0x00012c    0x2  Data  Gb  menu.o [1]
+input_akpp_oil          0x000126    0x2  Data  Gb  menu.o [1]
+input_candles_of_chenge
+                        0x000134    0x2  Data  Gb  menu.o [1]
+input_changing_the_injector
+                        0x000132    0x2  Data  Gb  menu.o [1]
+input_cleaning_tnvd     0x000130    0x2  Data  Gb  menu.o [1]
+input_engin_oil         0x000124    0x2  Data  Gb  menu.o [1]
+input_fuel_filter       0x00012a    0x2  Data  Gb  menu.o [1]
+input_oil_filter        0x00012e    0x2  Data  Gb  menu.o [1]
+input_oil_reducer       0x000128    0x2  Data  Gb  menu.o [1]
+input_set_speed_city    0x000136    0x2  Data  Gb  menu.o [1]
+input_set_speed_trass   0x000138    0x2  Data  Gb  menu.o [1]
+input_wheel_size_input  0x00013a    0x2  Data  Gb  menu.o [1]
+inst_air_filter         0x000114    0x2  Data  Gb  menu.o [1]
+inst_akpp_oil           0x00010e    0x2  Data  Gb  menu.o [1]
+inst_candles_of_chenge  0x00011c    0x2  Data  Gb  menu.o [1]
+inst_changing_the_injector
+                        0x00011a    0x2  Data  Gb  menu.o [1]
+inst_cleaning_tnvd      0x000118    0x2  Data  Gb  menu.o [1]
+inst_engin_oil          0x00010c    0x2  Data  Gb  menu.o [1]
+inst_fuel_filter        0x000112    0x2  Data  Gb  menu.o [1]
+inst_oil_filter         0x000116    0x2  Data  Gb  menu.o [1]
+inst_oil_reducer        0x000110    0x2  Data  Gb  menu.o [1]
+inst_set_speed_city     0x00011e    0x2  Data  Gb  menu.o [1]
+inst_set_speed_trass    0x000120    0x2  Data  Gb  menu.o [1]
+inst_wheel_size_input   0x000122    0x2  Data  Gb  menu.o [1]
+lcd                     0x00a644   0x77  Code  Gb  lcd.o [1]
+lcd_clear               0x00a6ce   0x18  Code  Gb  lcd.o [1]
+lcd_com                 0x00a6c7    0x7  Code  Gb  lcd.o [1]
+lcd_gotoxy              0x00a74d    0xe  Code  Gb  lcd.o [1]
+lcd_init                0x00a6e6   0x3f  Code  Gb  lcd.o [1]
+lcd_init2               0x00b10b   0x31  Code  Gb  lcd.o [1]
+lcd_out                 0x00b3c2   0x1a  Code  Gb  menu.o [1]
+lcd_putchar             0x00a72f    0x7  Code  Gb  lcd.o [1]
+lcd_putsf               0x00a736   0x17  Code  Gb  lcd.o [1]
+led_alarm               0x00af90   0x3b  Code  Gb  alarm.o [1]
+lm7001_data             0x00a870   0xa6  Code  Gb  fm.o [1]
+load_flash              0x009c91  0x233  Code  Gb  flash.o [1]
+main                    0x00a9a5   0x7d  Code  Gb  main.o [1]
+main_menu               0x008080  0xb4c  Code  Gb  menu.o [1]
+mem_fm                  0x0000ee    0x2  Data  Gb  fm.o [1]
+memadr                  0x000012    0x2  Data  Gb  fm.o [1]
+memcpy                  0x00b30d   0x25  Code  Gb  memcpy.o [4]
+num_h                   0x000092    0x2  Data  Gb  clock.o [1]
+num_m                   0x000090    0x2  Data  Gb  clock.o [1]
+num_s                   0x00008e    0x2  Data  Gb  clock.o [1]
+odometr                 0x000072    0x4  Data  Gb  counter.o [1]
+p_one                   0x000082    0x4  Data  Gb  menu.o [1]
+p_two                   0x000086    0x4  Data  Gb  menu.o [1]
+pad                     0x00b03a   0x37  Code  Lc  xprintffull_nomb.o [4]
+parsing                 0x00b24a   0x2a  Code  Gb  lcd.o [1]
+parsing_clock           0x00b2e8   0x25  Code  Gb  lcd.o [1]
+parsingfm               0x00b1c7   0x2c  Code  Gb  lcd.o [1]
+pin_5                   0x000142    0x2  Data  Gb  set_pin.o [1]
+pin_6                   0x000144    0x2  Data  Gb  set_pin.o [1]
+rattling_PA_4           0x0000a8    0x2  Data  Gb  counter.o [1]
+rattling_PA_5           0x0000aa    0x2  Data  Gb  counter.o [1]
+rattling_PA_6           0x0000ac    0x2  Data  Gb  counter.o [1]
+rattling_PA_SAVE_FM     0x0000ae    0x2  Data  Gb  counter.o [1]
+read                    0x00ae5e   0x3e  Code  Gb  fm.o [1]
+read_button             0x00ac31   0x56  Code  Gb  gidro_trans.o [1]
+read_button_save_fm     0x00abdb   0x56  Code  Gb  fm.o [1]
+read_button_speed       0x00acdd   0x56  Code  Gb  speed.o [1]
+read_kbrd               0x00ac87   0x56  Code  Lc  menu.o [1]
+save_flash              0x00a0bb  0x185  Code  Gb  flash.o [1]
+save_fm                 0x000150    0x1  Data  Gb  fm.o [1]
+save_station            0x00ab76   0x65  Code  Gb  fm.o [1]
+scale                   0x00ae1b   0x43  Code  Lc  xprintffull_nomb.o [4]
+selection               0x000148    0x2  Data  Gb  speed.o [1]
+set_button              0x00a512  0x129  Code  Gb  set_pin.o [1]
+set_tim_1               0x00b3a5   0x1d  Code  Gb  counter.o [1]
+set_tim_2               0x00b8ae   0x11  Code  Gb  counter.o [1]
+set_tim_3               0x00b368   0x1f  Code  Gb  counter.o [1]
+set_tim_4               0x00b8bf   0x11  Code  Gb  counter.o [1]
+shift_c                 0x000076    0x4  Data  Gb  flash.o [1]
+shift_inst_air_filter   0x0000d8    0x2  Data  Gb  flash.o [1]
+shift_inst_akpp_oil     0x0000d2    0x2  Data  Gb  flash.o [1]
+shift_inst_candles_of_chenge
+                        0x0000e0    0x2  Data  Gb  flash.o [1]
+shift_inst_changing_the_injector
+                        0x0000de    0x2  Data  Gb  flash.o [1]
+shift_inst_cleaning_tnvd
+                        0x0000dc    0x2  Data  Gb  flash.o [1]
+shift_inst_engin_oil    0x0000d0    0x2  Data  Gb  flash.o [1]
+shift_inst_fuel_filter  0x0000d6    0x2  Data  Gb  flash.o [1]
+shift_inst_oil_filter   0x0000da    0x2  Data  Gb  flash.o [1]
+shift_inst_oil_reducer  0x0000d4    0x2  Data  Gb  flash.o [1]
+shift_inst_set_speed_city
+                        0x0000e2    0x2  Data  Gb  flash.o [1]
+shift_inst_set_speed_trass
+                        0x0000e4    0x2  Data  Gb  flash.o [1]
+shift_inst_wheel_size_input
+                        0x0000e6    0x2  Data  Gb  flash.o [1]
+shift_vew_air_filter    0x0000c0    0x2  Data  Gb  flash.o [1]
+shift_vew_akpp_oil      0x0000ba    0x2  Data  Gb  flash.o [1]
+shift_vew_candles_of_chenge
+                        0x0000c8    0x2  Data  Gb  flash.o [1]
+shift_vew_changing_the_injector
+                        0x0000c6    0x2  Data  Gb  flash.o [1]
+shift_vew_cleaning_tnvd
+                        0x0000c4    0x2  Data  Gb  flash.o [1]
+shift_vew_engin_oil     0x0000b8    0x2  Data  Gb  flash.o [1]
+shift_vew_fuel_filter   0x0000be    0x2  Data  Gb  flash.o [1]
+shift_vew_oil_filter    0x0000c2    0x2  Data  Gb  flash.o [1]
+shift_vew_oil_reducer   0x0000bc    0x2  Data  Gb  flash.o [1]
+shift_vew_set_speed_city
+                        0x0000ca    0x2  Data  Gb  flash.o [1]
+shift_vew_set_speed_trass
+                        0x0000cc    0x2  Data  Gb  flash.o [1]
+shift_vew_wheel_size_input
+                        0x0000ce    0x2  Data  Gb  flash.o [1]
+speed_button            0x00b21f   0x2b  Code  Gb  speed.o [1]
+speed_city              0x00ad86   0x17  Code  Gb  speed.o [1]
+speed_trass             0x00adc1   0x17  Code  Gb  speed.o [1]
+sprintf                 0x00ae9c   0x3e  Code  Gb  sprintf.o [4]
+state_menu              0x000151    0x1  Data  Gb  menu.o [1]
+status                  0x000146    0x2  Data  Gb  speed.o [1]
+strlen                  0x00b54a   0x12  Code  Gb  strlen.o [4]
+stroka_one              0x00013c    0x2  Data  Gb  menu.o [1]
+stroka_two              0x00013e    0x2  Data  Gb  menu.o [1]
+time                    0x000019    0x1  Data  Gb  lcd.o [1]
+timefm                  0x000010    0x2  Data  Gb  fm.o [1]
+timer                   0x0000b0    0x2  Data  Gb  counter.o [1]
+timer_aux               0x0000b2    0x2  Data  Gb  counter.o [1]
+tuning                  0x00ad33   0x53  Code  Gb  fm.o [1]
+upState                 0x0000a4    0x2  Data  Gb  counter.o [1]
+up_down                 0x00b0a5   0x33  Code  Gb  valcoder.o [1]
+vew_air_filter          0x0000fc    0x2  Data  Gb  menu.o [1]
+vew_akpp_oil            0x0000f6    0x2  Data  Gb  menu.o [1]
+vew_candles_of_chenge   0x000104    0x2  Data  Gb  menu.o [1]
+vew_changing_the_injector
+                        0x000102    0x2  Data  Gb  menu.o [1]
+vew_cleaning_tnvd       0x000100    0x2  Data  Gb  menu.o [1]
+vew_engin_oil           0x0000f4    0x2  Data  Gb  menu.o [1]
+vew_fuel_filter         0x0000fa    0x2  Data  Gb  menu.o [1]
+vew_oil_filter          0x0000fe    0x2  Data  Gb  menu.o [1]
+vew_oil_reducer         0x0000f8    0x2  Data  Gb  menu.o [1]
+vew_set_speed_city      0x000106    0x2  Data  Gb  menu.o [1]
+vew_set_speed_trass     0x000108    0x2  Data  Gb  menu.o [1]
+vew_wheel_size_input    0x00010a    0x2  Data  Gb  menu.o [1]
+
+
+[1] = D:\Radio\MK\STM\STM8L\COPY_Avto_Comp\Release\Obj
+[2] = command line
+[3] = dbgstm8smn.a
+[4] = dlstm8smn.a
+
+  14 100 bytes of readonly  code memory
+   1 285 bytes of readonly  data memory
+     595 bytes of readwrite data memory (+ 63 absolute)
+
+Errors: none
+Warnings: none

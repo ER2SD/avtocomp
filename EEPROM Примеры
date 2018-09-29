@@ -1,0 +1,84 @@
+int __eeprom_wait_for_last_operation(void)	//перевод GOOGLE "eeprom ждут последней операции"
+{
+  if(FLASH_IAPSR_bit.WR_PG_DIS) return 0;	//Произошла попытка записи на страницу с защитой от записи
+  while(!FLASH_IAPSR_bit.HVOFF);			//Пока не станет низким уровнем у нас ретурн_1
+  return 1;
+}
+
+void __eeprom_program_byte(uint8_t __near * dst, uint8_t v)	//не понимаю для чего эта функция
+{
+  *dst = v;		//что такое "  *dst  " не могу найти в интернете описание этого...
+}
+
+void __eeprom_program_long(uint8_t __near * dst, uint32_t v) перевод GOOGLE "Долгосрочная программа eeprom"
+{
+  FLASH_CR2_bit.WPRG = 1; //Программирование слов 1 устанавливается программно, 0 устанавливается после завершения операции.
+  *(dst++) = *((uint8_t*)(&v));   	//Не понятно.
+  *(dst++) = *((uint8_t*)(&v) + 1);	//Не понятно.
+  *(dst++) = *((uint8_t*)(&v) + 2);	//Не понятно.
+  *dst = *((uint8_t*)(&v) + 3);  	//Не понятно.
+}
+
+void EEPROM_Unlock(void) //Разблокировка записи
+{
+FLASH_DUKR = FLASH_RASS_KEY2;
+FLASH_DUKR = FLASH_RASS_KEY1;
+}
+
+void EEPROM_Lock(void)	//Блокировка записи
+{
+FLASH_IAPSR_bit.DUL=0;
+}
+//И дальше вооще не понятно. За что отвечает каждая строчка.
+__no_init __eeprom uint8_t x;
+#pragma data_alignment=4
+__no_init __eeprom uint32_t y;
+__no_init __eeprom uint8_t z;
+__eeprom uint8_t test[10]={ 1,2,3,4,5,6,7,8,9,10 };
+
+int main()
+{
+EEPROM_Unlock();	//Разрешаем запись
+x=test[5];		//что то с массивом. Я разберусь позже
+z=x+1;			//Я так понимаю какой то переход на следующую ячейку памяти.
+y=0x12345678;	//Не знаю что это.
+EEPROM_Lock();	//Запрещаем запись
+for(;;);		//Зачем так пусто. Это так надо?
+}
+
+int inst_engin_oil=0;
+int inst_akpp_oil=0;
+int inst_oil_reducer=0;
+int inst_fuel_filter=0;
+int inst_air_filter=0;
+int inst_oil_filter=0;
+int inst_cleaning_tnvd=0;
+int inst_changing_the_injector=0;
+int inst_candles_of_chenge=0;
+int inst_set_speed_city=0;
+int inst_set_speed_trass=0;
+
+int input_engin_oil=0;
+int input_akpp_oil=0;
+int input_oil_reducer=0;
+int input_fuel_filter=0;
+int input_air_filter=0;
+int input_oil_filter=0;
+int input_cleaning_tnvd=0;
+int input_changing_the_injector=0;
+int input_candles_of_chenge=0;
+int input_set_speed_city=0;
+int input_set_speed_trass=0;
+
+  vew_engin_oil--;
+  vew_akpp_oil--;
+  vew_oil_reducer--;
+  vew_fuel_filter--;
+  vew_air_filter--;
+  vew_oil_filter--;
+  vew_cleaning_tnvd--;
+  vew_changing_the_injector--;
+  vew_candles_of_chenge--;
+  
+"%-7ld                "
+"defaults=%-7ld       "
