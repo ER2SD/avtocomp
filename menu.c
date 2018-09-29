@@ -10,8 +10,8 @@
 #include "fm.h"
 #include "clock.h"
 
-unsigned int vew_engin_oil=0;
-unsigned int vew_akpp_oil=0;
+//unsigned int vew_engin_oil=0;
+//unsigned int vew_akpp_oil=0;
 unsigned int vew_oil_reducer=0;
 unsigned int vew_fuel_filter=0;
 unsigned int vew_air_filter=0;
